@@ -1,5 +1,6 @@
 from config import PROJECT_NAME, VERSION, DEVELOPER
 from security_tools import check_password_strength
+from system_info import display_system_info
 
 
 def show_banner():
