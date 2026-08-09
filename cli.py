@@ -24,12 +24,16 @@ def main_menu():
     while True:
         print("\nاختر عملية:")
         print("1 - فحص قوة كلمة المرور")
+        print("2 - معلومات النظام")
         print("0 - خروج")
 
         choice = input("\nاختيارك: ")
 
         if choice == "1":
             password_checker()
+
+        elif choice == "2":
+            display_system_info()
 
         elif choice == "0":
             print("تم إغلاق CyberForge Security Lab.")
