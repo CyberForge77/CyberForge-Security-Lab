@@ -1,6 +1,7 @@
 from config import PROJECT_NAME, VERSION, DEVELOPER
 from security_tools import check_password_strength
 from system_info import display_system_info
+from scan_log import save_scan, show_logs
 
 
 def show_banner():
@@ -19,12 +20,15 @@ def password_checker():
 
     print(f"\nنتيجة الفحص: {result}")
 
+    save_scan("فحص قوة كلمة المرور", result)
+
 
 def main_menu():
     while True:
         print("\nاختر عملية:")
         print("1 - فحص قوة كلمة المرور")
         print("2 - معلومات النظام")
+        print("3 - سجل الفحوصات")
         print("0 - خروج")
 
         choice = input("\nاختيارك: ")
@@ -34,6 +38,9 @@ def main_menu():
 
         elif choice == "2":
             display_system_info()
+
+        elif choice == "3":
+            show_logs()
 
         elif choice == "0":
             print("تم إغلاق CyberForge Security Lab.")
